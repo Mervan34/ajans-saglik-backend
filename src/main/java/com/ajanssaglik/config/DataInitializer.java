@@ -18,7 +18,8 @@ public class DataInitializer implements CommandLineRunner {
         // Admin kullanıcısı yoksa oluştur
         if (!userRepository.existsByUsername("adminZine")) {
             User admin = new User();
-
+            admin.setUsername("adminZine");
+            admin.setPassword(passwordEncoder.encode("zInRey2409/;"));
             admin.setRole("ROLE_ADMIN");
             userRepository.save(admin);
 
