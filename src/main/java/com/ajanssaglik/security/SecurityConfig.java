@@ -49,7 +49,7 @@ public class SecurityConfig {
                         .requestMatchers("/api/contact/**").permitAll()
 
                         // 🔐 Admin
-                        .requestMatchers("/api/admin/**").hasRole("ADMIN")
+                        .requestMatchers("/api/admin/**").hasAuthority("ROLE_ADMIN")
 
                         .anyRequest().authenticated()
                 )
