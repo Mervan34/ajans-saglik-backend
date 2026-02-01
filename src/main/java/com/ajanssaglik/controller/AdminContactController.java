@@ -11,7 +11,6 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/admin/contacts")
 @RequiredArgsConstructor
-@CrossOrigin(origins = "http://localhost:4200", allowCredentials = "true")
 public class AdminContactController {
     private final ContactRequestService contactRequestService;
 

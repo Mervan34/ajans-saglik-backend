@@ -15,7 +15,6 @@ import java.util.Map;
 @RestController
 @RequestMapping("/api/admin/products")
 @RequiredArgsConstructor
-@CrossOrigin(origins = "http://localhost:4200", allowCredentials = "true")
 public class AdminProductController {
     private final ProductService productService;
 
