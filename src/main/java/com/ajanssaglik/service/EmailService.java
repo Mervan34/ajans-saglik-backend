@@ -16,11 +16,15 @@ public class EmailService {
     @Value("${admin.email}")
     private String adminEmail;
 
+    @Value("${spring.mail.username}")
+    private String fromEmail;
+
     @Async
     public void sendContactRequestEmail(ContactRequest request) {
         try {
             SimpleMailMessage message = new SimpleMailMessage();
             message.setTo(adminEmail);
+            message.setFrom(fromEmail);
             message.setSubject("Yeni İletişim Talebi - " + request.getRequestType().getDisplayName());
 
             StringBuilder text = new StringBuilder();
