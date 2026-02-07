@@ -19,9 +19,8 @@ public class EmailService {
     @Value("${spring.mail.username}")
     private String fromEmail;
 
-    @Async
     public void sendContactRequestEmail(ContactRequest request) {
-        try {
+
             SimpleMailMessage message = new SimpleMailMessage();
             message.setTo(adminEmail);
             message.setFrom(fromEmail);
@@ -43,9 +42,6 @@ public class EmailService {
 
             message.setText(text.toString());
             mailSender.send(message);
-        } catch (Exception e) {
-            e.printStackTrace();
-            throw new RuntimeException("Mail gönderilemedi!", e);
-        }
+
     }
 }
