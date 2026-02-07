@@ -40,7 +40,8 @@ public class EmailService {
             message.setText(text.toString());
             mailSender.send(message);
         } catch (Exception e) {
-            System.err.println("Email gönderilemedi: " + e.getMessage());
+            e.printStackTrace();
+            throw new RuntimeException("Mail gönderilemedi!", e);
         }
     }
 }
